@@ -19,4 +19,23 @@ var soma = function soma() {
 
 console.log(soma());
 console.log(soma(1));
-console.log(soma(1, 2));
+console.log(soma(1, 2)); // desestruturar objeto
+
+var usuario = {
+  nome: 'Marco',
+  idade: 23,
+  endereco: {
+    cidade: "Curitiba",
+    estado: "PR"
+  }
+};
+var nome = usuario.nome,
+    idade = usuario.idade;
+console.log(nome, idade);
+
+function mostraNome(_ref) {
+  var nome = _ref.nome;
+  console.log(nome);
+}
+
+mostraNome(usuario);
