@@ -20,3 +20,16 @@ console.log(arr3);
 const usuario2 = {...usuario, nome:"João"};
 
 console.log(usuario2);
+
+console.log(`meu nome é ${usuario.nome}`);
+
+const nome = 'Marco';
+const idade = 21;
+
+function createObj(nome, idade){
+    return {
+        nome, idade
+    }
+}
+
+console.log(createObj(nome, idade))

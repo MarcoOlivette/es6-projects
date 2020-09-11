@@ -32,3 +32,15 @@ var usuario2 = _objectSpread(_objectSpread({}, usuario), {}, {
 });
 
 console.log(usuario2);
+console.log("meu nome \xE9 ".concat(usuario.nome));
+var nome = 'Marco';
+var idade = 21;
+
+function createObj(nome, idade) {
+  return {
+    nome: nome,
+    idade: idade
+  };
+}
+
+console.log(createObj(nome, idade));
