@@ -82,3 +82,26 @@ var Manager = /*#__PURE__*/function (_User2) {
 
 var manager = new Manager("Manager email", "Manager password");
 var admin = new Admin("admin email", "admin password"); // Exercicio 2
+
+var usuarios = [{
+  nome: 'Diego',
+  idade: 23,
+  empresa: 'Rocketseat'
+}, {
+  nome: 'Gabriel',
+  idade: 15,
+  empresa: 'Rocketseat'
+}, {
+  nome: 'Lucas',
+  idade: 30,
+  empresa: 'Facebook'
+}];
+var arr = usuarios.map(function (user) {
+  return user.idade;
+});
+var arr2 = usuarios.filter(function (user) {
+  return user.empresa == 'Rocketseat';
+});
+var arr3 = usuarios.find(function (user) {
+  return user.empresa == 'Google';
+}); // Exercicio 3
