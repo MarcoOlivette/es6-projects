@@ -131,4 +131,29 @@ function somar([...props]){
     }
     return total;
 }
-console.log(somar(arrayNumbers));
+
+// exercicio 5
+
+const user = {
+    nome : "Marco",
+    idade: 21,
+    endereco: {
+        cidade: "Curitiba",
+        uf: "PR"
+    }
+};
+
+let testando = {...user, nome : "Gabriel"};
+testando = {...user, nome : "Lontras"};
+
+// 
+
+const vaasdfdasf = "top";
+const iae = "iae";
+
+const iaeman = {
+    vaasdfdasf,
+    iae
+}
+
+console.log(iaeman);

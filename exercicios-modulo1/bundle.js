@@ -203,6 +203,30 @@ function somar(_ref2) {
   }
 
   return total;
-}
+} // exercicio 5
 
-console.log(somar(arrayNumbers));
+
+var user = {
+  nome: "Marco",
+  idade: 21,
+  endereco: {
+    cidade: "Curitiba",
+    uf: "PR"
+  }
+};
+
+var testando = _objectSpread(_objectSpread({}, user), {}, {
+  nome: "Gabriel"
+});
+
+testando = _objectSpread(_objectSpread({}, user), {}, {
+  nome: "Lontras"
+}); // 
+
+var vaasdfdasf = "top";
+var iae = "iae";
+var iaeman = {
+  vaasdfdasf: vaasdfdasf,
+  iae: iae
+};
+console.log(iaeman);
