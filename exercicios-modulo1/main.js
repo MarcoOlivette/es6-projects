@@ -87,11 +87,48 @@ const mostraUsuario = (nome = 'Diego', idade = 18) => {
     }
 };
 
-console.log(mostraUsuario(usuario.nome, usuario.idade));
-
 // 3.4
-const promise = function () {
-    return new Promise(function (resolve, reject) {
-        return resolve();
-    })
+
+const promise = () => new Promise(function (resolve, reject) {
+    return resolve();
+});
+
+
+// exercicio 4 
+
+const empresa = {
+    nome: 'Rocketseat',
+    endereco: {
+        cidade: 'Rio do Sul',
+        estado: 'SC',
+    }
+};
+
+const {
+    nome,
+    endereco: {
+        cidade,
+        estado
+    }
+} = empresa;
+
+const mostraInfo = ({
+    nome = "",
+    idade = 0
+}) => (
+    idade > 1 ? `Usuario ${nome} tem ${idade} anos de idade ` : `Usuario ${nome} tem ${idade} ano de idade `
+);
+
+// exercicio 5
+
+
+let [a, ...resto] = arrayNumbers;
+
+function somar([...props]){
+    let p, total = 0;
+    for(p = 0; p < props.length; p++){
+        total += props[p];
+    }
+    return total;
 }
+console.log(somar(arrayNumbers));

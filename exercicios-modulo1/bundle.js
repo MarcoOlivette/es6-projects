@@ -1,5 +1,17 @@
 "use strict";
 
+function _toArray(arr) { return _arrayWithHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -145,12 +157,52 @@ var mostraUsuario = function mostraUsuario() {
     nome: nome,
     idade: idade
   };
-};
+}; // 3.4
 
-console.log(mostraUsuario(usuario.nome, usuario.idade)); // 3.4
 
 var promise = function promise() {
   return new Promise(function (resolve, reject) {
     return resolve();
   });
+}; // exercicio 4 
+
+
+var empresa = {
+  nome: 'Rocketseat',
+  endereco: {
+    cidade: 'Rio do Sul',
+    estado: 'SC'
+  }
 };
+var nome = empresa.nome,
+    _empresa$endereco = empresa.endereco,
+    cidade = _empresa$endereco.cidade,
+    estado = _empresa$endereco.estado;
+
+var mostraInfo = function mostraInfo(_ref) {
+  var _ref$nome = _ref.nome,
+      nome = _ref$nome === void 0 ? "" : _ref$nome,
+      _ref$idade = _ref.idade,
+      idade = _ref$idade === void 0 ? 0 : _ref$idade;
+  return idade > 1 ? "Usuario ".concat(nome, " tem ").concat(idade, " anos de idade ") : "Usuario ".concat(nome, " tem ").concat(idade, " ano de idade ");
+}; // exercicio 5
+
+
+var a = arrayNumbers[0],
+    resto = arrayNumbers.slice(1);
+
+function somar(_ref2) {
+  var _ref3 = _toArray(_ref2),
+      props = _ref3.slice(0);
+
+  var p,
+      total = 0;
+
+  for (p = 0; p < props.length; p++) {
+    total += props[p];
+  }
+
+  return total;
+}
+
+console.log(somar(arrayNumbers));
