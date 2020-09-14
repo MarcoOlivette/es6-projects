@@ -4,11 +4,11 @@ class Api {
     static async getUserInfo(username) {
         try {
             const response = await axios.get(`https://api.github.com/users/${username}`);
-            console.log(response)
+            console.log(response.data);
         } catch (err) {
-            console.log("dfasdfasdfasdfasdfasdfadfasdfa")
+            console.log("erro");
         }
     }
 }
 
-Api.getUserInfo('MarcoOlivet546a546dfas546te')
+Api.getUserInfo('MarcoOlivette');
